@@ -1,11 +1,13 @@
-def mostrar_feliz():
-    pass
+def mostrar_estado(estado):
 
-def mostrar_normal():
-    pass
+    if estado == "feliz":
+        # mostrar sprite feliz
 
-def mostrar_durmiendo():
-    pass
+    elif estado == "normal":
+        # mostrar sprite normal
 
-def mostrar_muerta():
-    pass
+    elif estado == "triste":
+        # mostrar sprite triste
+
+    elif estado == "muerta":
+        # mostrar sprite muerta
