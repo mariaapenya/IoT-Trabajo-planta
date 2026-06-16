@@ -158,6 +158,18 @@ main.py
 | 30 % – 59 %       | Normal | La planta se encuentra en condiciones aceptables.                      |
 | ≥ 60 %            | Feliz  | La planta dispone de suficiente humedad y se encuentra en buen estado. |
 
+### Dashboard Grafana
+Importar el archivo:
+grafana/dashboard.json
+desde:
+Dashboard -> Import
+
+### Bot de Telegram
+Comandos disponibles:
+
+/start
+/estado
+/ayuda
 
 
 
