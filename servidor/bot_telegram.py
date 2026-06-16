@@ -1,5 +1,5 @@
 #parte 1: setup
-import logging, asyncio
+import logging, asyncio 
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 from influxdb_client import InfluxDBClient
@@ -14,25 +14,27 @@ logging.basicConfig(level=logging.INFO)
 
 influx = InfluxDBClient(
     url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
-q = influx.query_api()
+qapi = influx.query_api()
+
 
 def get_datos():
-    q = 'from(bucket:"plantas") |> range(start:-10m) |> last()' #si quisiéramos añadir más métricas esta query se tendría que cambiar como por ejemplo:
-    #    query = '''
-    #from(bucket: "plantas")
-      #|> range(start: -10m)
-      #|> filter(fn: (r) => r._measurement == "sensores_planta")
-      #|> filter(fn: (r) => r._field == "humedad")
-      #|> last()
-    #'''
+   #q = 'from(bucket:"plantas") |> range(start:-10m) |> last()' #si quisiéramos añadir más métricas esta query se tendría que cambiar como por ejemplo:
+    q = '''
+    from(bucket: "plantas")
+      |> range(start: -10m)
+      |> filter(fn: (r) => r._measurement == "sensores_planta")
+      |> filter(fn: (r) => r._field == "humedad")
+      |> last()
+    '''
     #qué te devuelve el último valor tomado de HUMEDAD no de en general
     #en nuestro caso solo almacenamos humedad así que mantenemos la query simple
     #he modificado el bucle así que revisar (si midiésemos más valores también habría que modificar el bucle)
     #esta versión, es más simple (aunque menos escalable) y solo tiene en cuenta la humedad
   
-    tablas = query_api.query(q)
+    tablas = qapi.query(q)
     for tabla in tablas:
         for registro in tabla.records:
+           
             return {
                 "humedad": registro.get_value(),
                 "hora": registro.get_time()
