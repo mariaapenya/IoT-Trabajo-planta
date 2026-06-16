@@ -1,9 +1,9 @@
-WIFI_SSID = 'NombreDeTuRed'
-WIFI_PASSWORD = 'TuContrasena'
+WIFI_SSID = 'DIGIFIBRA-27Z9'
+WIFI_PASSWORD = 'DCtyckPXhYD5'
 
-MQTT_BROKER = '192.168.1.100'
+MQTT_BROKER = '192.168.1.149'
 MQTT_PORT = 1883
-MQTT_CLIENT = 'pico_planta'
+MQTT_CLIENT = 'pico1'
 MQTT_TOPIC = 'planta/sensores'
 
 # SENSOR
@@ -29,4 +29,4 @@ INTERVALO_S = 30
 # IMÁGENES (YA EN RAW)
 IMG_FELIZ = 'feliz.raw'
 IMG_NORMAL = 'normal.raw'
-IMG_TRISTE = 'triste.raw''
+IMG_TRISTE = 'triste.raw'
