@@ -1,5 +1,10 @@
 import time
 import ujson
+import network
+import machine
+from umqtt.simple import MQTTClient
+import time
+import ujson
 from umqtt.simple import MQTTClient
 
 from sensores import leer_humedad_pct
