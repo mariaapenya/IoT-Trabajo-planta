@@ -9,7 +9,7 @@ import InfluxDBClient
 
 BOT_TOKEN     = 'TU_TOKEN_BOTFATHER'
 INFLUX_URL    = 'http://localhost:8086'  #influxdb está en nuestro PC
-INFLUX_TOKEN  = 'TU_TOKEN_INFLUXDB'  #clave de acceso de influxdb
+INFLUX_TOKEN  = 'zjh7Xf5323okmz7R4vaQ4G3WMwgF46w8O3aRogu6VM07g9oCQarARgOrWy7FULY6RgMjZmnty0w1IonhMIyVKQ=='  #clave de acceso de influxdb
 INFLUX_ORG    = 'unilab'
 INFLUX_BUCKET = 'plantas'
 
