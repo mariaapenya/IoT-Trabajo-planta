@@ -8,11 +8,15 @@ MQTT_TOPIC = 'planta/sensores'
 
 #SENSOR HUMEDAD
 PIN_HUMEDAD = 26  # GP26 / ADC0
-#PIN_DHT22 = 15    # GP15
+
 
 #PANTALLA QUE HAY QUE CAMBIAR
-PIN_SDA = 6       # GP4 I2C
-PIN_SCL = 7       # GP5 I2C
+SPI_MOSI = 19   # GP19 -> SDA pantalla
+SPI_SCK  = 18   # GP18 -> SCL pantalla
+
+LCD_CS   = 4    # GP4 -> CS pantalla
+LCD_DC   = 5    # GP5 -> DC pantalla
+LCD_RST  = 6    # GP6 -> RES pantalla
 
 
 ADC_SECO = 52000
