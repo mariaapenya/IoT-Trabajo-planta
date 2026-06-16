@@ -7,6 +7,9 @@ influxdb-client>=1.39.0
 python-telegram-bot>=20.0
 #implementación del bot de Telegram para la consulta remota del estado de la planta
 
+Pillow>=10.0.0
+#convertidor de imágenes jpeg
+
 #las dependencias se instalan mediante:
 #pip install -r requirements.txt
 
