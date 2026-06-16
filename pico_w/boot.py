@@ -30,3 +30,4 @@ def conectar_wifi():
 
 
 wifi_ok = conectar_wifi()
+
