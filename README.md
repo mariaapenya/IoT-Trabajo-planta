@@ -121,6 +121,43 @@ IoT-Trabajo-planta/
 └── .gitignore
 ```
 
+## Instalación
+### 1. Instalar dependencias Python
+pip install -r pc_servidor/requirements.txt
+
+### 2. Instalar servicios necesarios
+- Mosquitto MQTT Broker
+- InfluxDB 2.x
+- Grafana
+
+### Configurar la Raspberry Pi Pico W
+Configurar 
+- WIFI_SSID
+- WIFI_PASSWORD
+- MQTT_BROKER
+- ADC_SECO
+- ADC_MOJADO
+
+## Ejecución
+### Iniciar el puente MQTT -> InfluxDB
+python pc_servidor/mqtt_to_influx.py
+
+###Iniciar el bot de Telegram
+python pc_servidor/bot_telegram.py
+
+### Ejecutar la Pico W
+Subir los archivos de la carpeta pico_w mediante Thonny y ejecutar:
+main.py
+
+### Estados de la planta
+## Estados de la planta
+
+| Humedad del suelo | Estado    | Descripción                                                            |
+| ----------------- | --------- | ---------------------------------------------------------------------- |
+| < 30 %            | Triste | La planta necesita agua. Se recomienda regarla lo antes posible.       |
+| 30 % – 59 %       | Normal | La planta se encuentra en condiciones aceptables.                      |
+| ≥ 60 %            | Feliz  | La planta dispone de suficiente humedad y se encuentra en buen estado. |
+
 
 
 
