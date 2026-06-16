@@ -7,7 +7,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 MQTT_BROKER   = 'localhost'
 MQTT_TOPIC    = 'planta/sensores'
 INFLUX_URL    = 'http://localhost:8086'
-INFLUX_TOKEN  = 'TU_TOKEN_INFLUXDB'
+INFLUX_TOKEN  = 'zjh7Xf5323okmz7R4vaQ4G3WMwgF46w8O3aRogu6VM07g9oCQarARgOrWy7FULY6RgMjZmnty0w1IonhMIyVKQ=='
 INFLUX_ORG    = 'unilab'
 INFLUX_BUCKET = 'plantas'
 
