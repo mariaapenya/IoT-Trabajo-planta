@@ -142,7 +142,7 @@ Configurar
 ### Iniciar el puente MQTT -> InfluxDB
 python pc_servidor/mqtt_to_influx.py
 
-###Iniciar el bot de Telegram
+### Iniciar el bot de Telegram
 python pc_servidor/bot_telegram.py
 
 ### Ejecutar la Pico W
