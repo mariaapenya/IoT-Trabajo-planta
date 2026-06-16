@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.INFO)
 
 influx = InfluxDBClient(
     url=INFLUX_URL, token=INFLUX_TOKEN, org=INFLUX_ORG)
-qapi = influx.query_api()
+q = influx.query_api()
 
 def get_datos():
     q = 'from(bucket:"plantas") |> range(start:-10m) |> last()' #si quisiéramos añadir más métricas esta query se tendría que cambiar como por ejemplo:
@@ -48,7 +48,7 @@ def get_datos():
 
 #esta función convierte el dato de humedad en un estado del tamagotchi
 def obtener_estado(hum):
-    if humedad is None:
+    if hum is None:
         return "Desconocido"
 
     if hum < 30:
