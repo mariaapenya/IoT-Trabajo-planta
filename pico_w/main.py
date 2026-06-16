@@ -29,6 +29,10 @@ while True:
     #mensaje JSON no es necesario en verdad pero simplifica mucho y para futuras ampliaciones
     payload = ujson.dumps({
         "humedad": humedad
+        #si se quieren añadir más parámetros tendríamos que hacer lo siguiente:
+        #temperatura': temp,
+        #'humedad_aire': hum_aire
+        #por ejemplo
     })
 
     #publicar datos por MQTT
