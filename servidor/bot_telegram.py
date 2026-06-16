@@ -1,11 +1,8 @@
 #parte 1: setup
 import logging, asyncio
-from telegram 
-import Update
-from telegram.ext 
-import Application, CommandHandler, ContextTypes
-from influxdb_client 
-import InfluxDBClient
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
+from influxdb_client import InfluxDBClient
 
 BOT_TOKEN     = '8956350252:AAE_y6PVsD-6D7NZo5rL5rVWo9KiF7hLSgo'
 INFLUX_URL    = 'http://localhost:8086'  #influxdb está en nuestro PC
