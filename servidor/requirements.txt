@@ -1,1 +1,12 @@
+paho-mqtt>=1.6.1
+#recepción de mensajes MQTT enviados por la Raspberry Pi Pico W
+
+influxdb-client>=1.39.0
+#almacenamiento y consulta de datos en InfluxDB
+
+python-telegram-bot>=20.0
+#implementación del bot de Telegram para la consulta remota del estado de la planta
+
+#las dependencias se instalan mediante:
+#pip install -r requirements.txt
 
