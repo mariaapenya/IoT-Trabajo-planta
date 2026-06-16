@@ -122,10 +122,10 @@ IoT-Trabajo-planta/
 ```
 
 ## Instalación
-### 1. Instalar dependencias Python
+### Instalar dependencias Python
 pip install -r pc_servidor/requirements.txt
 
-### 2. Instalar servicios necesarios
+### Instalar servicios necesarios
 - Mosquitto MQTT Broker
 - InfluxDB 2.x
 - Grafana
