@@ -57,4 +57,15 @@ Además, el estado de la planta se representa mediante un personaje tipo Tamagot
 * **Git y GitHub** para el control de versiones y la gestión colaborativa del proyecto.
 
 
+## Arquitectura del sistema
+
+Sensor de humedad │ ▼ Raspberry Pi Pico W │ ▼ MQTT │ ▼ mqtt_to_influx.py │ ▼ InfluxDB │ │ │ └────────► Bot Telegram │ └────────────► Grafana
+
+## Estructura del repositorio 
+
+IoT-Trabajo-planta/ │ ├── pico_w/ │ ├── boot.py │ ├── config.py │ ├── config_ejemplo.py │ ├── main.py │ ├── sensores.py │ ├── lcd_display.py │ ├── st7735.py │ ├── feliz.raw │ ├── normal.raw │ └── triste.raw │ ├── pc_servidor/ │ ├── mqtt_to_influx.py │ ├── bot_telegram.py │ └── requirements.txt │ ├── imagenes_originales/ │ ├── feliz.png │ ├── normal.png │ └── triste.png │ ├── herramientas/ │ └── convertir_png_rgb565.py │ ├── grafana/ │ └── dashboard.json │ ├── docs/ │ └── fotos/ │ ├── README.md └── .gitignore
+
+
+
+
 
