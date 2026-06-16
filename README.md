@@ -87,18 +87,14 @@ IoT-Trabajo-planta/
 ├── pico_w/
 │   ├── boot.py
 │   ├── config.py
-│   ├── config_ejemplo.py
 │   ├── main.py
 │   ├── sensores.py
-│   ├── lcd_display.py
-│   ├── st7735.py
-│   ├── sprites.py
+│   ├── oled_display.py
 │   ├── feliz.raw
 │   ├── normal.raw
 │   ├── triste.raw
-│   └── dormida.raw
 │
-├── pc_servidor/
+├── servidor/
 │   ├── mqtt_to_influx.py
 │   ├── bot_telegram.py
 │   └── requirements.txt
@@ -106,14 +102,14 @@ IoT-Trabajo-planta/
 ├── grafana/
 │   └── dashboard.json
 │
-├── imagenes_originales/
+├── imagenes/
+│   └── convertir_png_rgb565.py
+│   ├── feliz.raw
+│   ├── normal.raw
+│   ├── triste.raw
 │   ├── feliz.png
 │   ├── normal.png
 │   ├── triste.png
-│   └── dormida.png
-│
-├── herramientas/
-│   └── convertir_png_rgb565.py
 │
 ├── docs/
 │   ├── memoria.pdf
