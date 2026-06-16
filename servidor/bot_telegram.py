@@ -31,8 +31,7 @@ def get_datos():
     #qué te devuelve el último valor tomado de HUMEDAD no de en general
     #en nuestro caso solo almacenamos humedad así que mantenemos la query simple
     #he modificado el bucle así que revisar (si midiésemos más valores también habría que modificar el bucle)
-    #esta versión devuelve un número, es más simple (aunque menos escalable) y solo tiene en cuenta la humedad
-    #se podría hacer otra versión que devuelva un diccionario con diferentes parámetros
+    #esta versión, es más simple (aunque menos escalable) y solo tiene en cuenta la humedad
   
     tablas = query_api.query(q)
     for tabla in tablas:
@@ -47,8 +46,9 @@ def get_datos():
 
 #parte 2:comandos
 
+#esta función convierte el dato de humedad en un estado del tamagotchi
 def obtener_estado(hum):
-    if not isinstance(hum, (int, float)):
+    if humedad is None:
         return "Desconocido"
 
     if hum < 30:
@@ -58,15 +58,24 @@ def obtener_estado(hum):
     else:
         return "Feliz"
 
+#comprueba que exista la hora por si acaso InfluxDB se ralla y convierte el datetime a texto 
+def formatear_hora(hora):
+    if hora is None:
+        return "desconocida"
+    #string format time (texto tipo horas: minutos: segundos)
+    return hora.strftime("%H:%M:%S")
+
+#cuando el usuario escribe /start (u es el mensaje recibido y ctx es el contexto del robot)
 async def cmd_start(u: Update, ctx: ContextTypes.DEFAULT_TYPE):
     txt = (
         "Hola! Soy el monitor de tu planta.\n"
         "/estado — ver estado actual\n"
         "/ayuda — mostrar esta ayuda"
     )
-
+    #espera a la respuesta al chat de Telegram (librería Telegram es asincrónica)
     await u.message.reply_text(txt)
-
+    
+#cuando el usuario escribe /ayuda
 async def cmd_ayuda(u: Update, ctx: ContextTypes.DEFAULT_TYPE):
     txt = (
         "Este bot permite consultar el estado de la planta en tiempo real.\n\n"
@@ -75,30 +84,34 @@ async def cmd_ayuda(u: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "Normal — humedad entre 30% y 59%\n"
         "Feliz — humedad igual o superior al 60%\n\n"
         "Comandos:\n"
-        "/estado — ver humedad actual\n"
+        "/estado — ver humedad actual y hora de la última medición\n"
         "/ayuda — mostrar esta ayuda"
     )
 
     await u.message.reply_text(txt)
-
+#cuando el usuario escribe /estado
 async def cmd_estado(u: Update, ctx: ContextTypes.DEFAULT_TYPE):
-    d = get_datos()
+    #llama a la función get_datos() de la parte 1
+    datos = get_datos()
 
-    if not d:
+    if datos is None:
         await u.message.reply_text("Sin datos recientes. Comprueba que la Pico W esté funcionando.")
         return
 
-    hum = d.get("humedad")
+    humedad = datos.get("humedad")
+    hora = datos.get("hora")
 
-    if hum is None:
+    if humedad is None:
         await u.message.reply_text("No se ha encontrado el dato de humedad en InfluxDB.")
         return
 
-    estado = obtener_estado(hum)
+    estado = obtener_estado(humedad)
+    hora_txt= formatear_hora(hora)
 
     await u.message.reply_text(
         f"Estado: {estado}\n"
-        f"Humedad suelo: {hum:.1f}%"
+        f"Humedad suelo: {humedad:.1f}%\n"
+        f"Última lectura: {hora_txt}"
     )
 
 def main():
