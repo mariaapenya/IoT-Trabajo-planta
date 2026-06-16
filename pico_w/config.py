@@ -6,28 +6,27 @@ MQTT_PORT = 1883
 MQTT_CLIENT = 'pico_planta'
 MQTT_TOPIC = 'planta/sensores'
 
-#SENSOR HUMEDAD
-PIN_HUMEDAD = 26  # GP26 / ADC0
+# SENSOR
+PIN_ADC = 26
 
+# PANTALLA ST7735S
+SPI_MOSI = 19
+SPI_SCK  = 18
 
-#PANTALLA QUE HAY QUE CAMBIAR
-SPI_MOSI = 19   # GP19 -> SDA pantalla
-SPI_SCK  = 18   # GP18 -> SCL pantalla
+LCD_CS   = 4
+LCD_DC   = 5
+LCD_RST  = 6
 
-LCD_CS   = 4    # GP4 -> CS pantalla
-LCD_DC   = 5    # GP5 -> DC pantalla
-LCD_RST  = 6    # GP6 -> RES pantalla
-
-
+# CALIBRACIÓN
 ADC_SECO = 52000
 ADC_MOJADO = 20000
 
-#ESTADOS 
-UMBRAL_SECO = 30  #PLANTA TRISTE
-UMBRAL_BIEN = 60  #PLANTA FELIZ
-INTERVALO_S = 30  #SEGUNDOS ENTRE LECTURAS
+# UMBRALES
+UMBRAL_SECO = 30
+UMBRAL_BIEN = 60
+INTERVALO_S = 30
 
-#IMAGENES
-IMG_FELIZ = 'feliz.pbm'
-IMG_NORMAL = 'normal.pbm'
-IMG_TRISTE = 'triste.pbm'
+# IMÁGENES (YA EN RAW)
+IMG_FELIZ = 'feliz.raw'
+IMG_NORMAL = 'normal.raw'
+IMG_TRISTE = 'triste.raw''
