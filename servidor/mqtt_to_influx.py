@@ -3,6 +3,7 @@ import json
 import paho.mqtt.client as mqtt
 from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
+
 MQTT_BROKER   = 'localhost'
 MQTT_TOPIC    = 'planta/sensores'
 INFLUX_URL    = 'http://localhost:8086'
