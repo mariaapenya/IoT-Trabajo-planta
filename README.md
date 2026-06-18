@@ -138,17 +138,6 @@ Configurar
 - ADC_SECO
 - ADC_MOJADO
 
-## Ejecución
-### Iniciar el puente MQTT -> InfluxDB
-python pc_servidor/mqtt_to_influx.py
-
-### Iniciar el bot de Telegram
-python pc_servidor/bot_telegram.py
-
-### Ejecutar la Pico W
-Subir los archivos de la carpeta pico_w mediante Thonny y ejecutar:
-main.py
-
 ### Estados de la planta
 ## Estados de la planta
 
@@ -158,18 +147,7 @@ main.py
 | 30 % – 59 %       | Normal | La planta se encuentra en condiciones aceptables.                      |
 | ≥ 60 %            | Feliz  | La planta dispone de suficiente humedad y se encuentra en buen estado. |
 
-### Dashboard Grafana
-Importar el archivo:
-grafana/dashboard.json
-desde:
-Dashboard -> Import
 
-### Bot de Telegram
-Comandos disponibles:
-
-/start
-/estado
-/ayuda
 
 
 
