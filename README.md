@@ -139,7 +139,6 @@ Configurar
 - ADC_MOJADO
 
 ### Estados de la planta
-## Estados de la planta
 
 | Humedad del suelo | Estado    | Descripción                                                            |
 | ----------------- | --------- | ---------------------------------------------------------------------- |
